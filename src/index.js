@@ -40,13 +40,20 @@ function Product(props) {
 
 function App() {
   // return (
-  //   <Container className='p-3 my-3'>
+  //   <Container className='p-3 my-3' style={{ backgroundColor: "ghostwhite" }}>
   //     <h1>Hello</h1>
+  //     <Button style={{ margin: "0px 3px" }}>Click Me</Button>
+  //     <Button variant="success" style={{ margin: "0px 3px" }}>Click Me</Button>
+  //     <Button variant="danger" style={{ margin: "0px 3px" }}>Click Me</Button>
+  //     <img src="hat.jpg" className="img-fluid" alt="view" style={{ marginTop: "10px" }}></img>
   //   </Container>
   // );
 
   const [totalItem, setTotalItem] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalShirt, setTotalShirt] = useState(0);
+  const [totalHat, setTotalHat] = useState(0);
+  const [totalShorts, setTotalShorts] = useState(0);
 
   return (
     <Container className="p-3 my-3">
@@ -62,6 +69,7 @@ function App() {
             onClick={() => {
               setTotalItem(totalItem + 1);
               setTotalPrice(totalPrice + products[0].price);
+              setTotalShirt(totalShirt + 1);
             }}
           >
             Add To Cart
@@ -78,6 +86,7 @@ function App() {
             onClick={() => {
               setTotalItem(totalItem + 1);
               setTotalPrice(totalPrice + products[1].price);
+              setTotalHat(totalHat + 1);
             }}
           >
             Add To Cart
@@ -94,6 +103,7 @@ function App() {
             onClick={() => {
               setTotalItem(totalItem + 1);
               setTotalPrice(totalPrice + products[2].price);
+              setTotalShorts(totalShorts + 1);
             }}
           >
             Add To Cart
@@ -104,6 +114,9 @@ function App() {
         <Col className="text-center">
           <h3>Total in Cart {totalItem} Item</h3>
           <h3>Total Price {totalPrice} Baht</h3>
+          <h3>Total Shirt {totalShirt} Item</h3>
+          <h3>Total Hat {totalHat} Item</h3>
+          <h3>Total Shorts {totalShorts} Item</h3>
         </Col>
       </Row>
     </Container>
